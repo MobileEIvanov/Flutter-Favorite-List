@@ -72,8 +72,8 @@
       <file leaf-file-name="chat_list_item.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/chat/chat_list_item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+            <state relative-caret-position="365">
+              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -336,12 +336,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1897" y="254" width="1920" height="1011" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
       <window_info id="Build Variants" side_tool="true" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5021299" side_tool="true" visible="true" weight="0.24579124" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5021299" side_tool="true" visible="true" weight="0.1694725" />
       <window_info anchor="bottom" id="Dart Analysis" sideWeight="0.49893504" weight="0.32996634" />
       <window_info anchor="right" id="Flutter Outline" />
       <window_info anchor="bottom" id="Logcat" sideWeight="0.49840257" weight="0.32996634" />
@@ -355,11 +354,11 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info active="true" anchor="right" x="0" y="0" width="430" height="811" id="Documentation" side_tool="true" visible="true" weight="0.3375932" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978701" visible="true" weight="0.24579124" />
+      <window_info anchor="right" x="0" y="0" width="430" height="811" id="Documentation" side_tool="true" visible="true" weight="0.3375932" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978701" weight="0.24579124" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="CheckStyle" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49840257" weight="0.1694725" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.4978701" visible="true" weight="0.1694725" />
       <window_info id="Captures" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1826411" />
       <window_info anchor="right" id="Fabric" />
@@ -380,13 +379,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/chat/chat_list_item.dart</url>
-          <line>59</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
   </component>
@@ -505,8 +497,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/chat/chat_list_item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+        <state relative-caret-position="365">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
