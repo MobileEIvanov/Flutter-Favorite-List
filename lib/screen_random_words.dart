@@ -108,8 +108,3 @@ class RandomWordsState extends State<RandomWordsScreen> {
     );
   }
 }
-
-
-
-
-
