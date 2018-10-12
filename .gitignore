@@ -30,7 +30,6 @@ out/
 
 # Gradle files
 .gradle/
-build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -49,7 +48,7 @@ captures/
 
 # IntelliJ
 *.iml
-.idea/workspace.xml
+/.idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
 .idea/assetWizardSettings.xml
@@ -79,14 +78,15 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
-.idea/
+/.idea/
 app/app.iml
 app/libs/
 app/src/main/java/com/example/githubrepos/utils/
 gradle/
 gradlew
 gradlew.bat
-.idea
+*.idea/
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore

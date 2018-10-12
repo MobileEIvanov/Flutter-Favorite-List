@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screen_random_words.dart';
+import 'package:flutter_app/chat/chat_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Welcome to Flutter",
         theme: ThemeData(primaryColor: Colors.white),
-        home: RandomWordsScreen());
+        home: ChatScreen());
   }
 }
