@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/chat_list_item.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+final _googleSignIn = GoogleSignIn();
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -11,6 +14,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = TextEditingController();
   bool _isComposing = false;
+  bool _isSignedIn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +103,11 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                           icon: Icon(
                             Icons.send,
                           ),
-                          onPressed: _isComposing
-                              ? () => _sendMessage(_textController.text)
-                              : null,
-                        ),
+                          onPressed: () async {
+                            (_isComposing && _isSignedIn)
+                                ? () => _sendMessage(_textController.text)
+                                : await _handleSignIn();
+                          }),
                 )
               ],
             ),
@@ -128,5 +133,15 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     });
 
     message.animationController.forward();
+  }
+
+  //https://github.com/flutter/flutter/issues/15168
+
+  Future<Null> _handleSignIn() async {
+    try {
+      await _googleSignIn.signIn();
+    } catch (error) {
+      print(error);
+    }
   }
 }
