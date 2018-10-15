@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: defaultTargetPlatform == TargetPlatform.iOS
             ? kIOSTheme
             : kDefaultTheme,
-        home: MyHomePage());
+        home: ChatScreen());
   }
 }

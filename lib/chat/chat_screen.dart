@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/chat_list_item.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
+
 final _googleSignIn = GoogleSignIn();
 
 class ChatScreen extends StatefulWidget {
@@ -15,9 +16,11 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   final TextEditingController _textController = TextEditingController();
   bool _isComposing = false;
   bool _isSignedIn = false;
+  bool _isIOS;
 
   @override
   Widget build(BuildContext context) {
+    _isIOS = Theme.of(context).platform == TargetPlatform.iOS;
     return new Scaffold(
       appBar: AppBar(
         title: Text("ChatScreen"),
@@ -42,7 +45,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   Widget _buildBody() {
     return Container(
-      decoration: Theme.of(context).platform == TargetPlatform.iOS
+      decoration: _isIOS
           ? BoxDecoration(
               border: Border(top: BorderSide(color: Colors.grey[200])))
           : null,
@@ -77,6 +80,17 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
             ),
             child: Row(
               children: <Widget>[
+                _isIOS
+                    ? CupertinoButton(
+                        child: FlatButton.icon(
+                            onPressed: _handleImagePick,
+                            icon: Icon(CupertinoIcons.photo_camera),
+                            label: null),
+                      )
+                    : IconButton(
+                        icon: Icon(Icons.image),
+                        onPressed: _handleImagePick,
+                      ),
                 Flexible(
                   child: TextField(
                     controller: _textController,
@@ -92,7 +106,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 4.0),
-                  child: Theme.of(context).platform == TargetPlatform.iOS
+                  child: _isIOS
                       ? CupertinoButton(
                           child: Text("Send"),
                           onPressed: _isComposing
@@ -103,7 +117,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                           icon: Icon(
                             Icons.send,
                           ),
-                          onPressed: (_isComposing && _isSignedIn)
+                          onPressed: _isComposing
                               ? () => _sendMessage(_textController.text)
                               : null,
                         ),
@@ -125,6 +139,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     });
     ChatMessage message = ChatMessage(
         text: text,
+        image: null,
         animationController: AnimationController(
             vsync: this, duration: Duration(microseconds: 3000)));
     setState(() {
@@ -142,5 +157,18 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     } catch (error) {
       print(error);
     }
+  }
+
+  Future _handleImagePick() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      ChatMessage message = ChatMessage(
+          text: null,
+          image: image,
+          animationController: AnimationController(
+              vsync: this, duration: Duration(microseconds: 3000)));
+      _messages.insert(0, message);
+      message.animationController.forward();
+    });
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,15 +7,13 @@ import 'package:flutter/material.dart';
 var currentUserEmail = "received";
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({this.text, this.animationController});
+  ChatMessage({this.text, this.image, this.animationController});
 
   String _name = "Your name";
   final String text;
+  final Object image;
   final AnimationController animationController;
-  var imageUri =
-      "https://blog.spoongraphics.co.uk/wp-content/uploads/2014/07/Untitled-11.jpg";
-  var avatarImage =
-      "https://blog.spoongraphics.co.uk/wp-content/uploads/2014/07/Untitled-11.jpg";
+  String avatarImage = null;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,9 @@ class ChatMessage extends StatelessWidget {
             Text(_name, style: Theme.of(context).textTheme.subhead),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
-              child: imageUri != null
+              child: (image != null)
                   ? Image.network(
-                      imageUri,
+                      image,
                       width: 250.0,
                       scale: 1.5,
                       repeat: ImageRepeat.noRepeat,
@@ -75,18 +75,39 @@ class ChatMessage extends StatelessWidget {
             Text(_name, style: Theme.of(context).textTheme.subhead),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
-              child: imageUri != null
-                  ? Image.network(
-                      imageUri,
-                      width: 250.0,
-                      scale: 1.5,
-                      repeat: ImageRepeat.noRepeat,
-                    )
+              child: image != null
+                  ? _hadleLoadImage(image)
                   : Text(text),
             ),
           ],
         ),
       ),
     ];
+  }
+
+  Widget _hadleLoadImage(Object image) {
+    if (image is File) {
+      return _loadImageFromFile(image);
+    } else {
+      return _loadImageFromNetwork(image);
+    }
+  }
+
+  Widget _loadImageFromFile(File image) {
+    return Image.file(
+      image,
+      width: 250.0,
+      scale: 1.5,
+      repeat: ImageRepeat.noRepeat,
+    );
+  }
+
+  Widget _loadImageFromNetwork(String image) {
+    return Image.network(
+      image,
+      width: 250.0,
+      scale: 1.5,
+      repeat: ImageRepeat.noRepeat,
+    );
   }
 }
