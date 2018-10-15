@@ -4,12 +4,11 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-var currentUserEmail = "received";
+var currentUserEmail;
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({this.text, this.image, this.animationController});
-
-  String _name = "Your name";
+  ChatMessage({this.text, this.image, this.animationController, this.senderName});
+  final String senderName;
   final String text;
   final Object image;
   final AnimationController animationController;
@@ -38,7 +37,7 @@ class ChatMessage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(_name, style: Theme.of(context).textTheme.subhead),
+            Text(senderName, style: Theme.of(context).textTheme.subhead),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: (image != null)
@@ -55,7 +54,7 @@ class ChatMessage extends StatelessWidget {
       ),
       Container(
         margin: const EdgeInsets.only(left: 16.0),
-        child: CircleAvatar(child: Text(_name[0])),
+        child: CircleAvatar(child: Text(senderName[0])),
       ),
     ];
   }
@@ -66,18 +65,16 @@ class ChatMessage extends StatelessWidget {
         margin: const EdgeInsets.only(right: 16.0),
         child: avatarImage != null
             ? CircleAvatar(backgroundImage: NetworkImage(avatarImage))
-            : CircleAvatar(child: Text(_name[0])),
+            : CircleAvatar(child: Text(senderName[0])),
       ),
       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(_name, style: Theme.of(context).textTheme.subhead),
+            Text(senderName, style: Theme.of(context).textTheme.subhead),
             Container(
               margin: const EdgeInsets.only(top: 5.0),
-              child: image != null
-                  ? _hadleLoadImage(image)
-                  : Text(text),
+              child: image != null ? _hadleLoadImage(image) : Text(text),
             ),
           ],
         ),

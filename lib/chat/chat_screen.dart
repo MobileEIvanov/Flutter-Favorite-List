@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/chat_list_item.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-final _googleSignIn = GoogleSignIn();
+final googleSignIn = GoogleSignIn(scopes: <String>['email']);
+final auth = FirebaseAuth.instance;
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -17,6 +19,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   bool _isComposing = false;
   bool _isSignedIn = false;
   bool _isIOS;
+  FirebaseUser currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -117,10 +120,12 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                           icon: Icon(
                             Icons.send,
                           ),
-                          onPressed: _isComposing
-                              ? () => _sendMessage(_textController.text)
-                              : null,
-                        ),
+                          onPressed: () async {
+                            await _handleSignIn();
+                            if (_isComposing) {
+                              _sendMessage(_textController.text);
+                            }
+                          }),
                 )
               ],
             ),
@@ -138,10 +143,12 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
       _isComposing = false;
     });
     ChatMessage message = ChatMessage(
-        text: text,
-        image: null,
-        animationController: AnimationController(
-            vsync: this, duration: Duration(microseconds: 3000)));
+      text: text,
+      image: null,
+      animationController: AnimationController(
+          vsync: this, duration: Duration(microseconds: 3000)),
+      senderName: currentUser.displayName,
+    );
     setState(() {
       _messages.insert(0, message);
     });
@@ -152,21 +159,43 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   //https://github.com/flutter/flutter/issues/15168
 
   Future<Null> _handleSignIn() async {
-    try {
-      await _googleSignIn.signIn();
-    } catch (error) {
-      print(error);
+    await googleSignIn.signOut();
+    await auth.signOut();
+    GoogleSignInAccount signInUser = googleSignIn.currentUser;
+    if (signInUser == null) {
+      signInUser = await googleSignIn.signInSilently();
     }
+    if (signInUser == null) {
+      await googleSignIn.signIn();
+    }
+
+    currentUserEmail = googleSignIn.currentUser.email;
+
+    if (await auth.currentUser() == null) {
+      GoogleSignInAuthentication credentials =
+          await googleSignIn.currentUser.authentication;
+      currentUser = await auth.signInWithGoogle(
+          idToken: credentials.idToken, accessToken: credentials.accessToken);
+    }
+  }
+
+  Future _signOut() async {
+    await auth.signOut();
+    googleSignIn.signOut();
+    Scaffold.of(context)
+        .showSnackBar(new SnackBar(content: new Text('User logged out')));
   }
 
   Future _handleImagePick() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
       ChatMessage message = ChatMessage(
-          text: null,
-          image: image,
-          animationController: AnimationController(
-              vsync: this, duration: Duration(microseconds: 3000)));
+        text: null,
+        image: image,
+        animationController: AnimationController(
+            vsync: this, duration: Duration(microseconds: 3000)),
+        senderName: currentUser.displayName,
+      );
       _messages.insert(0, message);
       message.animationController.forward();
     });
