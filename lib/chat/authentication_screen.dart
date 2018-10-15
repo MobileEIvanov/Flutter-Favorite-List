@@ -90,7 +90,7 @@ class SignInDemoState extends State<SignInDemo> {
     try {
       await _googleSignIn.signIn();
     } catch (error) {
-      print(error);
+      debugPrint(error);
     }
   }
 

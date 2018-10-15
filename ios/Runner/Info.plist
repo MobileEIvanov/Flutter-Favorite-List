@@ -41,20 +41,22 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<!-- Google Sign-in Section -->
-<key>CFBundleURLTypes</key>
-<array>
-	<dict>
-		<key>CFBundleTypeRole</key>
-		<string>Editor</string>
-		<key>CFBundleURLSchemes</key>
-		<array>
-			<!-- TODO Replace this value: -->
-			<!-- Copied from GoogleServices-Info.plist key REVERSED_CLIENT_ID -->
-			<string>com.googleusercontent.apps.444119377376-1r14qnc275edihnhkjog4pec03um41kq</string>
-		</array>
-	</dict>
-</array>
-<!-- End of the Google Sign-in Section -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.444119377376-1r14qnc275edihnhkjog4pec03um41kq</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>In order to post chat images</string>
+	<key>NSCameraUsageDescription</key>
+	<string>In order to capture images from camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>In order to record audio stream while video is capture from camera</string>
 </dict>
 </plist>

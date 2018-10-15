@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/authentication_screen.dart';
 import 'package:flutter_app/chat/chat_screen.dart';
+import 'package:flutter_app/chat/image_capture_widget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: defaultTargetPlatform == TargetPlatform.iOS
             ? kIOSTheme
             : kDefaultTheme,
-        home: SignInDemo());
+        home: MyHomePage());
   }
 }

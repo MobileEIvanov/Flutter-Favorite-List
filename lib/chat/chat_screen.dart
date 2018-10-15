@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/chat/chat_list_item.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
+import 'package:image_picker/image_picker.dart';
 final _googleSignIn = GoogleSignIn();
 
 class ChatScreen extends StatefulWidget {
@@ -103,11 +103,10 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                           icon: Icon(
                             Icons.send,
                           ),
-                          onPressed: () async {
-                            (_isComposing && _isSignedIn)
-                                ? () => _sendMessage(_textController.text)
-                                : await _handleSignIn();
-                          }),
+                          onPressed: (_isComposing && _isSignedIn)
+                              ? () => _sendMessage(_textController.text)
+                              : null,
+                        ),
                 )
               ],
             ),
