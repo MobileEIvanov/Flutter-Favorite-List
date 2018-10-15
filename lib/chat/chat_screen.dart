@@ -4,6 +4,7 @@ import 'package:flutter_app/chat/chat_list_item.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 final googleSignIn = GoogleSignIn(scopes: <String>['email']);
 final auth = FirebaseAuth.instance;
@@ -17,9 +18,10 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = TextEditingController();
   bool _isComposing = false;
-  bool _isSignedIn = false;
   bool _isIOS;
   FirebaseUser currentUser;
+  final users = Firestore.instance.collection("users");
+  final _keeperBot = "JsSTTVVlGjVeOHgt2WxS";
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +104,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                         _isComposing = text.length > 0;
                       });
                     },
-                    onSubmitted: _sendMessage,
+                    onSubmitted: _sendMessage(null, null),
                     decoration:
                         InputDecoration.collapsed(hintText: "Send Message"),
                   ),
@@ -113,7 +115,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                       ? CupertinoButton(
                           child: Text("Send"),
                           onPressed: _isComposing
-                              ? () => _sendMessage(_textController.text)
+                              ? () => _sendMessage(_textController.text, null)
                               : null,
                         )
                       : IconButton(
@@ -123,7 +125,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                           onPressed: () async {
                             await _handleSignIn();
                             if (_isComposing) {
-                              _sendMessage(_textController.text);
+                              _sendMessage(_textController.text, null);
                             }
                           }),
                 )
@@ -137,23 +139,29 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   _onBackNavigation() {}
 
-  _sendMessage(String text) {
-    _textController.clear();
-    setState(() {
-      _isComposing = false;
-    });
-    ChatMessage message = ChatMessage(
-      text: text,
-      image: null,
-      animationController: AnimationController(
-          vsync: this, duration: Duration(microseconds: 3000)),
-      senderName: currentUser.displayName,
-    );
-    setState(() {
-      _messages.insert(0, message);
-    });
+  _sendMessage(String text, Object image) {
+    if (text != null || image != null) {
+      _textController.clear();
+      setState(() {
+        _isComposing = false;
+      });
 
-    message.animationController.forward();
+      ChatMessage message = ChatMessage(
+        text: text != null ? text : "",
+        image: image != null ? image : "",
+        animationController: AnimationController(
+            vsync: this, duration: Duration(microseconds: 3000)),
+        senderName: currentUser.displayName,
+        senderId: currentUser.uid,
+      );
+
+      setState(() {
+        _messages.insert(0, message);
+        message.animationController.forward();
+      });
+
+      _storeMessage(message);
+    }
   }
 
   //https://github.com/flutter/flutter/issues/15168
@@ -176,6 +184,11 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
           await googleSignIn.currentUser.authentication;
       currentUser = await auth.signInWithGoogle(
           idToken: credentials.idToken, accessToken: credentials.accessToken);
+
+      users.document(currentUser.uid).setData({
+        'name': currentUser.displayName,
+        'email': currentUser.email,
+      });
     }
   }
 
@@ -189,15 +202,29 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   Future _handleImagePick() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      ChatMessage message = ChatMessage(
-        text: null,
-        image: image,
-        animationController: AnimationController(
-            vsync: this, duration: Duration(microseconds: 3000)),
-        senderName: currentUser.displayName,
-      );
-      _messages.insert(0, message);
-      message.animationController.forward();
+      _sendMessage(null, image);
     });
+  }
+
+  Future _storeMessage(ChatMessage message) {
+    var messageData = {
+      'text': message.text,
+      'senderName': message.senderName,
+      'senderId': message.senderId,
+      'image': message.image,
+    };
+
+    // Store the current message for the user.
+    users
+        .document(currentUser.uid)
+        .collection("Chats")
+        .document(_keeperBot)
+        .setData(messageData);
+    // Create reference for the bot. Might be moved to functions.
+    users
+        .document(_keeperBot)
+        .collection("Chats")
+        .document(message.senderId)
+        .setData(messageData);
   }
 }

@@ -7,8 +7,15 @@ import 'package:flutter/material.dart';
 var currentUserEmail;
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({this.text, this.image, this.animationController, this.senderName});
+  ChatMessage(
+      {this.text,
+      this.image,
+      this.animationController,
+      this.senderName,
+      this.senderId});
+
   final String senderName;
+  final String senderId;
   final String text;
   final Object image;
   final AnimationController animationController;
