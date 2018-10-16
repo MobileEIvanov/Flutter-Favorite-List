@@ -22,8 +22,11 @@ dependencies:
   english_words: ^3.1.0
   firebase_auth: ^0.6.2+1
   cloud_firestore: ^0.8.1+1
+  firebase_storage: ^1.0.4
   google_sign_in: ^3.2.1
   image_picker: ^0.4.10
+  firestore_ui: ^1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

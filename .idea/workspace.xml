@@ -10,10 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60a7a05-9971-444f-9477-d1e71c0fd088" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/chat_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/chat_list_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/chat_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -53,8 +58,8 @@
       <file leaf-file-name="chat_screen.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/chat/chat_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+            <state relative-caret-position="76">
+              <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -62,11 +67,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="animated_firestore_list.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firestore_ui-1.0.1/lib/animated_firestore_list.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2646">
+              <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="chat_list_item.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/chat/chat_list_item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="-981">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -77,8 +91,8 @@
       <file leaf-file-name="framework.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/packages/flutter/lib/src/widgets/framework.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55560">
-              <caret line="3730" column="27" selection-start-line="3730" selection-start-column="27" selection-end-line="3730" selection-end-column="27" />
+            <state relative-caret-position="133">
+              <caret line="1656" column="22" lean-forward="true" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -86,8 +100,8 @@
       <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+            <state relative-caret-position="252">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -135,6 +149,7 @@
       <find>chat</find>
       <find>text</find>
       <find>_sendMes</find>
+      <find>_ha</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,21 +170,21 @@
         <option value="$PROJECT_DIR$/lib/chat/view_send_message.dart" />
         <option value="$PROJECT_DIR$/lib/screen_random_words.dart" />
         <option value="$PROJECT_DIR$/lib/chat/authentication_screen.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/lib/chat/image_capture_widget.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/chat/chat_list_item.dart" />
         <option value="$PROJECT_DIR$/lib/chat/chat_screen.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="278" />
+    <option name="x" value="260" />
     <option name="y" value="23" />
-    <option name="width" value="1322" />
+    <option name="width" value="1113" />
     <option name="height" value="667" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -178,13 +193,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Flutter-Favorite-List" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flutter-Favorite-List" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flutter-Favorite-List" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flutter-Favorite-List" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Flutter-Favorite-List" type="b2602c69:ProjectViewProjectNode" />
@@ -207,8 +227,8 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,12 +372,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="278" y="23" width="1322" height="667" extended-state="0" />
-    <editor active="true" />
+    <frame x="260" y="23" width="1113" height="667" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info id="Build Variants" order="2" sideWeight="0.5030303" side_tool="true" weight="0.19770521" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.1359375" side_tool="true" visible="true" weight="0.2943327" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13725491" side_tool="true" visible="true" weight="0.30530164" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.7643505" weight="0.32876712" />
       <window_info anchor="right" id="Flutter Outline" order="3" weight="0.32921448" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.87025595" weight="0.43835616" />
@@ -367,27 +386,27 @@
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8031774" weight="0.17465754" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4920635" weight="0.22303474" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" x="0" y="0" width="280" height="467" id="Documentation" order="11" side_tool="true" visible="true" weight="0.16328125" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8640625" visible="true" weight="0.2943327" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8627451" visible="true" weight="0.30530164" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49514562" weight="0.43493152" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8134715" visible="true" weight="0.175" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8258824" visible="true" weight="0.2567694" />
       <window_info anchor="right" id="Android WiFi ADB" order="10" />
       <window_info anchor="right" id="Fabric" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="2" sideWeight="0.1865285" side_tool="true" visible="true" weight="0.175" />
+      <window_info id="Favorites" order="2" sideWeight="0.17411764" side_tool="true" weight="0.25703126" />
       <window_info anchor="right" id="Flutter Inspector" order="9" weight="0.32921448" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49426302" weight="0.22431506" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="280" height="467" id="Documentation" order="11" side_tool="true" weight="0.45859376" />
       <window_info anchor="bottom" id="CheckStyle" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -399,11 +418,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/chat/chat_screen.dart</url>
-          <line>124</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/chat/authentication_screen.dart</url>
           <line>92</line>
@@ -446,24 +460,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/chat/chat_screen.dart</url>
-          <line>129</line>
-          <option name="timeStamp" value="18" />
+          <line>10</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/screen_random_words.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
@@ -783,24 +787,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/packages/flutter/lib/src/widgets/framework.dart">
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55560">
-          <caret line="3730" column="27" selection-start-line="3730" selection-start-column="27" selection-end-line="3730" selection-end-column="27" />
+        <state relative-caret-position="252">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+    <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firestore_ui-1.0.1/lib/animated_firestore_list.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+        <state relative-caret-position="-2646">
+          <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/packages/flutter/lib/src/widgets/framework.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="1656" column="22" lean-forward="true" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/chat/chat_list_item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="-981">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
@@ -809,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/chat/chat_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+        <state relative-caret-position="76">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
