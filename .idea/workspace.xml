@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60a7a05-9971-444f-9477-d1e71c0fd088" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/chat_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/chat_list_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/chat_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -58,11 +51,20 @@
       <file leaf-file-name="chat_screen.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/chat/chat_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+            <state relative-caret-position="-2201">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http_impl.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/bin/cache/dart-sdk/lib/_http/http_impl.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-397">
+              <caret line="2126" lean-forward="true" selection-start-line="2126" selection-end-line="2126" />
             </state>
           </provider>
         </entry>
@@ -92,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/packages/flutter/lib/src/widgets/framework.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="1656" column="22" lean-forward="true" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
+              <caret line="1656" column="22" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -182,7 +184,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="260" />
+    <option name="x" value="524" />
     <option name="y" value="23" />
     <option name="width" value="1113" />
     <option name="height" value="667" />
@@ -372,14 +374,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="23" width="1113" height="667" extended-state="0" />
+    <frame x="524" y="23" width="1113" height="667" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info id="Build Variants" order="2" sideWeight="0.5030303" side_tool="true" weight="0.19770521" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13725491" side_tool="true" visible="true" weight="0.30530164" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.13725491" side_tool="true" weight="0.30530164" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.7643505" weight="0.32876712" />
       <window_info anchor="right" id="Flutter Outline" order="3" weight="0.32921448" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.87025595" weight="0.43835616" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.87025595" visible="true" weight="0.4369287" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.5030303" side_tool="true" weight="0.19770521" />
@@ -390,11 +393,11 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8627451" visible="true" weight="0.30530164" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8627451" weight="0.2943327" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49514562" weight="0.43493152" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8258824" visible="true" weight="0.2567694" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8258824" weight="0.2567694" />
       <window_info anchor="right" id="Android WiFi ADB" order="10" />
       <window_info anchor="right" id="Fabric" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -468,16 +471,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/screen_random_words.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/chat/chat_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1755">
@@ -804,7 +797,7 @@
     <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/packages/flutter/lib/src/widgets/framework.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="1656" column="22" lean-forward="true" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
+          <caret line="1656" column="22" selection-start-line="1656" selection-start-column="22" selection-end-line="1656" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -818,10 +811,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Flutter/flutter/bin/cache/dart-sdk/lib/_http/http_impl.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="2126" lean-forward="true" selection-start-line="2126" selection-end-line="2126" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/chat/chat_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        <state relative-caret-position="-2201">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

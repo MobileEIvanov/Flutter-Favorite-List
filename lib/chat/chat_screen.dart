@@ -34,8 +34,8 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: _onBackNavigation(),
+            icon: Icon(Icons.exit_to_app, color: Colors.white),
+            onPressed: _signOut,
           )
         ],
       ),
@@ -61,6 +61,15 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     );
   }
 
+  ScrollController _scrollController = ScrollController();
+
+  void _goToElement(int index) {
+    _scrollController.animateTo((100.0 * index),
+        // 100 is the height of container and index of 6th element is 5
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut);
+  }
+
   Widget _buildListContentView() {
     if (currentUser != null) {
       return new Flexible(
@@ -72,7 +81,8 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               .collection("messages")
               .snapshots(),
           padding: const EdgeInsets.all(8.0),
-          reverse: true,
+          reverse: false,
+          controller: _scrollController,
           itemBuilder: (
             BuildContext context,
             DocumentSnapshot snapshot,
@@ -165,8 +175,6 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     );
   }
 
-  _onBackNavigation() {}
-
   _sendMessage(String text, Object image) {
     if (text != null || image != null) {
       _textController.clear();
@@ -210,11 +218,17 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   Future _signOut() async {
     await auth.signOut();
     googleSignIn.signOut();
+    setState(() {
+      currentUser = null;
+    });
     Scaffold.of(context)
         .showSnackBar(new SnackBar(content: new Text('User logged out')));
   }
 
   Future _handleImagePick() async {
+    if (currentUser == null) {
+      await _handleSignIn();
+    }
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     int timestamp = DateTime.now().microsecondsSinceEpoch;
     StorageReference storageReference = FirebaseStorage.instance
@@ -222,10 +236,13 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         .child(currentUser.uid)
         .child("img_" + timestamp.toString() + ".jpg");
 
-    storageReference.putFile(image);
-    Uri downloadUrl = await storageReference.getDownloadURL();
+    StorageUploadTask storageUploadTask = storageReference.putFile(image);
 
-    _sendMessage(null, downloadUrl.toString());
+    await storageUploadTask.onComplete
+        .then((StorageTaskSnapshot storageTask) async {
+      String download = await storageTask.ref.getDownloadURL();
+      _sendMessage(null, download);
+    });
   }
 
   Future _storeMessage(String text, String image) {
